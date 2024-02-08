@@ -1,4 +1,4 @@
-//Exportem la classe Pilota
+//Exportem la classe Pilota amb les seves variables
 export class Pilota {
     constructor(x, y, velX, velY, color, mida) {
       this.x = x;
@@ -15,7 +15,7 @@ export class Pilota {
       ctx.arc(this.x, this.y, this.mida, 0, 2 * Math.PI);
       ctx.fill();
     }
-    //Moura cada una de les pilotes
+    //Moura cada una de les pilotes i també amb les colisions
     mou(width, height) {
       if (this.x + this.mida >= width) {
         this.velX = -this.velX;
@@ -36,7 +36,7 @@ export class Pilota {
         this.velY = -this.velY;
         this.y = this.mida;
       }
-  
+      //Resultat de les boles
       this.x += this.velX;
       this.y += this.velY;
     }
